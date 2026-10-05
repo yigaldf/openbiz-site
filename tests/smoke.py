@@ -81,6 +81,12 @@ def main() -> int:
             target = resolve(rel, ref)
             if target is not None and not target.is_file():
                 errors.append(f"{rel}: broken link {ref} -> {target.relative_to(ROOT) if ROOT in target.parents else target}")
+    for rel in ("index.html", "en/index.html"):
+        html = (ROOT / rel).read_text(encoding="utf-8")
+        for needle in ('id="lead-form"', 'name="website"', 'name="consent"', 'id="lead-status"',
+                       'id="chat"', 'class="chat-log"', "data-open-chat", "data-wa-link", "data-api=", "site.js"):
+            if needle not in html:
+                errors.append(f"{rel}: v2 markup missing {needle}")
     for rel in ("privacy/index.html", "en/privacy/index.html"):
         if 'id="data-deletion"' not in (ROOT / rel).read_text(encoding="utf-8"):
             errors.append(f"{rel}: no #data-deletion anchor (Meta data-deletion URL)")
