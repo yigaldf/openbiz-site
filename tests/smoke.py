@@ -87,6 +87,9 @@ def main() -> int:
                        'id="chat"', 'class="chat-log"', "data-open-chat", "data-wa-link", "data-api=", "site.js"):
             if needle not in html:
                 errors.append(f"{rel}: v2 markup missing {needle}")
+    for rel in PAGES:
+        if "static.cloudflareinsights.com/beacon.min.js" not in (ROOT / rel).read_text(encoding="utf-8"):
+            errors.append(f"{rel}: no Cloudflare Web Analytics beacon")
     for rel in ("privacy/index.html", "en/privacy/index.html"):
         if 'id="data-deletion"' not in (ROOT / rel).read_text(encoding="utf-8"):
             errors.append(f"{rel}: no #data-deletion anchor (Meta data-deletion URL)")
