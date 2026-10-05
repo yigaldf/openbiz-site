@@ -22,7 +22,7 @@
   <main class="wrap">
     <article class="doc">
       <h1>Privacy policy</h1>
-      <p class="updated">Last updated: October 5, 2026</p>
+      <p class="updated">Last updated: October 6, 2026</p>
 
       <h2>1. Who we are</h2>
       <p>OpenBiz ("we") is an initiative in setup, operated by Yigal Pinhasi, that builds AI agents for small businesses. For any privacy matter, contact us at <a href="mailto:yigaldf@gmail.com">yigaldf@gmail.com</a>.</p>
@@ -38,7 +38,7 @@
 
       <h2>3. What data we collect</h2>
       <ul>
-        <li><strong>On the website:</strong> the site uses no cookies and no analytics tools. The hosting provider (GitHub Pages) may log IP addresses for security and operations, under its own policy.</li>
+        <li><strong>On the website:</strong> the site uses no cookies. To count visits we use Cloudflare Web Analytics, which collects aggregate data only (page views, referrer, country, browser and device type, load times); according to Cloudflare, it uses no cookies, does not fingerprint and does not track individual visitors. The hosting provider (GitHub Pages) may log IP addresses for security and operations, under its own policy.</li>
         <li><strong>In the agent chat on the website:</strong> the messages you write, their times, a random session id kept in your browser until the tab is closed, and your IP address (for rate limiting and abuse prevention). A phone number is stored only if you give it in the conversation.</li>
         <li><strong>In the "Leave your details" form:</strong> name, phone number, type of business, your message, and your IP address. The form is sent only after you tick the consent box.</li>
         <li><strong>In a conversation with an agent on WhatsApp:</strong> your phone number, your WhatsApp profile name, the content of the messages you send (text, and media if you send it) and message timestamps.</li>
@@ -63,6 +63,7 @@
         <li><strong>Anthropic</strong>: the AI model that processes conversation content to write replies. Under Anthropic's commercial terms, data sent through its API is not used to train models by default.</li>
         <li><strong>Railway</strong>: hosts the agent's server and database.</li>
         <li><strong>GitHub</strong>: hosts the website.</li>
+        <li><strong>Cloudflare</strong> (Web Analytics): aggregate visit counts on the website, without cookies.</li>
         <li><strong>Resend</strong>: sends us internal email alerts about new inquiries.</li>
       </ul>
       <p>We will disclose data to anyone else only if required by law.</p>
@@ -108,5 +109,7 @@
       </nav>
     </div>
   </footer>
+  <!-- Cloudflare Web Analytics: cookieless page-view counts, no individual tracking -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "da48ae6f92434eb488f0806ab7107b5d"}'></script>
 </body>
 </html>
