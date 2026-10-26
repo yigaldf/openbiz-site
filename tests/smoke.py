@@ -1,5 +1,5 @@
 """Smoke test for the static site: every page exists, has the right lang/dir,
-an OpenBiz title, and every relative link/asset resolves to a file.
+an OpenBizAI title, and every relative link/asset resolves to a file.
 
 Run: python3 tests/smoke.py
 """
@@ -75,8 +75,8 @@ def main() -> int:
         p.feed(f.read_text(encoding="utf-8"))
         if (p.lang, p.dir) != (lang, direction):
             errors.append(f"{rel}: lang/dir is {p.lang}/{p.dir}, expected {lang}/{direction}")
-        if "OpenBiz" not in p.title:
-            errors.append(f"{rel}: title {p.title!r} lacks OpenBiz")
+        if "OpenBizAI" not in p.title:
+            errors.append(f"{rel}: title {p.title!r} lacks OpenBizAI")
         for ref in p.refs:
             target = resolve(rel, ref)
             if target is not None and not target.is_file():
