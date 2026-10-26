@@ -1,4 +1,4 @@
-/* OpenBiz site v2: contact form, in-page chat, WhatsApp button.
+/* OpenBizAI site v2: contact form, in-page chat, WhatsApp button.
    Talks to the agent API (data-api on <body>). No build step, no libraries. */
 (function () {
   "use strict";
@@ -9,9 +9,9 @@
   var LANG = document.documentElement.lang === "en" ? "en" : "he";
   var T = {
     he: { sending: "שולח…", sent: "תודה! קיבלנו את הפרטים, יגאל יחזור אליך בהקדם.", err: "משהו השתבש. נסה שוב, או כתוב לנו במייל.",
-          busy: "קיבלנו הרבה בקשות. נסה שוב בעוד שעה.", typing: "הסוכן כותב…", wa: "היי, הגעתי מהאתר של OpenBiz" },
+          busy: "קיבלנו הרבה בקשות. נסה שוב בעוד שעה.", typing: "הסוכן כותב…", wa: "היי, הגעתי מהאתר של OpenBizAI" },
     en: { sending: "Sending…", sent: "Thanks! We got your details, Yigal will get back to you soon.", err: "Something went wrong. Try again, or email us.",
-          busy: "Too many requests. Please try again in an hour.", typing: "The agent is typing…", wa: "Hi, I came from the OpenBiz website" }
+          busy: "Too many requests. Please try again in an hour.", typing: "The agent is typing…", wa: "Hi, I came from the OpenBizAI website" }
   }[LANG];
 
   // ---- WhatsApp button: only when a number is configured
